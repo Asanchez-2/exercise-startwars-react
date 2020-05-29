@@ -10,10 +10,10 @@ import "../styles/index.scss";
 
 //import your own components
 import Layout from "./layout";
-import Card from "./component/card.js";
-import injectContext from "./store/appContext";
+import InjectContext from "./store/appContext";
+import CardVehicles from "./component/CardVehicles";
 
-const LoQueSea = injectContext(Card);
+const LoQueSea = InjectContext(CardVehicles);
 
 //render your react application
 ReactDOM.render(<LoQueSea />, document.querySelector("#app"));
