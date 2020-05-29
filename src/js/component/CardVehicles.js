@@ -6,13 +6,13 @@ const CardVehicles = () => {
 	return (
 		<div className="text-center mt-5" style={{ width: "32%", position: "absolute", left: "34%" }}>
 			<table className="table table-bordered mt-2 pt-5">
-				<thread className="thread-dark">
+				<thead className="thead-dark">
 					<tr>
 						<th scope="col">People</th>
 					</tr>
-				</thread>
+				</thead>
 				<tbody className="tbody-dark">
-					{store.Vehicles.map((e, index) => (
+					{store.vehicles.map((e, index) => (
 						<tr key={index}>
 							<td>{e.name}</td>
 						</tr>
