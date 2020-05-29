@@ -1,7 +1,69 @@
+.title {
+    font-family: 'Days One';
+	font-size: 50px;
+    color: #FFE807;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 46.4px;
+}
+
+
+.container-fluid {
+    background-image: url(https://i.pinimg.com/originals/40/c7/12/40c712e5f3833bc38dbe1213da27069e.jpg);
+}
+
 .card {
     width: 18rem;
 }
 
-.characteristics li {
-    list-style-type:none;
+.fab {
+    color: rgb(221, 15, 15);
+    font-size: 30px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+ .fab:hover {
+    opacity: 0.50;
+    -moz-opacity: .50;
+    transform: scale(1.5);
+    filter:alpha (opacity=50);
+ }
+
+ .fab:active {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    opacity: 0.50;
+    -moz-opacity: .20;
+    filter:alpha (opacity=50);
+}
+
+ .btn:active {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.logo {
+    text-align: center;
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    max-height: 400px;
 }

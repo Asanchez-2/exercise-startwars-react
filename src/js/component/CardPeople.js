@@ -1,17 +1,25 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 
-const CardVehicles = () => {
+const CardPeople = () => {
 	const { store, actions } = useContext(Context);
 	return (
 		<React.Fragment>
 			<div className="container-fluid">
-				<h1 className="title text-center m-3">Vehicles</h1>
+				<div>
+					<div className="col text-center">
+						<img
+							className="img-responsive logo"
+							src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/sagaposter-v2011_titled.jpg"
+						/>
+					</div>
+				</div>
+				<h1 className="title text-center m-3">Characters</h1>
 				<div className="row justify-content-md-center">
-					{store.vehicles.map(vehicle => (
-						<React.Fragment key={vehicle.id}>
+					{store.people.map(person => (
+						<React.Fragment key={person.id}>
 							<div className="card-deck">
-								<div className="col-3 col-md-4 mb-4">
+								<div className="col-3 col-md-4 col-sm-1 mb-4">
 									<div className="card bg-light" style={{ width: "18rem;" }}>
 										<img
 											className="card-img-top"
@@ -19,7 +27,7 @@ const CardVehicles = () => {
 											alt="Card image cap"
 										/>
 										<div className="card-body">
-											<h3 className="card-title">{vehicle.name.split(" ")[0]}</h3>
+											<h3 className="card-title">{person.name}</h3>
 											<p className="card-text">
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
 												mattis risus non rutrum. Fusce eget tempor ante. Duis mattis.
@@ -39,4 +47,4 @@ const CardVehicles = () => {
 		</React.Fragment>
 	);
 };
-export default CardVehicles;
+export default CardPeople;
