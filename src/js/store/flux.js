@@ -31,27 +31,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				actions.getData("people");
 			},
 			loadPlanets() {
-				const url = "https://swapi.dev/api/planets/";
-				fetch(url)
-					.then(res => res.json())
-					.then(result => {
-						setStore({
-							planets: result.results
-						});
-					})
-					.catch(e => console.error(e));
+				const actions = getActions();
+				actions.getData("planets");
 			},
 			loadVehicles() {
-				const url = "https://swapi.dev/api/vehicles/";
-				fetch(url)
-					.then(res => res.json())
-					.then(result => {
-						console.log("hola vehicles", result);
-						setStore({
-							vehicles: result.results
-						});
-					})
-					.catch(e => console.error(e));
+				const actions = getActions();
+				actions.getData("vehicles");
 			}
 		}
 	};
