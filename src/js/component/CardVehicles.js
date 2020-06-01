@@ -9,10 +9,10 @@ const CardVehicles = () => {
 				<h1 className="title text-center m-3">Vehicles</h1>
 				<div className="row justify-content-md-center">
 					{store.vehicles.map(vehicle => (
-						<React.Fragment key={vehicle.id}>
+						<React.Fragment key={vehicle.name}>
 							<div className="card-deck">
 								<div className="col-3 col-md-4 mb-4">
-									<div className="card bg-light" style={{ width: "18rem;" }}>
+									<div className="card bg-light" style={{ width: "18rem" }}>
 										<img
 											className="card-img-top"
 											src="https://via.placeholder.com/150x150"

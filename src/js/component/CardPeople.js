@@ -17,10 +17,10 @@ const CardPeople = () => {
 				<h1 className="title text-center m-3">Characters</h1>
 				<div className="row justify-content-md-center">
 					{store.people.map(person => (
-						<React.Fragment key={person.id}>
+						<React.Fragment key={person.name}>
 							<div className="card-deck">
 								<div className="col-3 col-md-4 col-sm-1 mb-4">
-									<div className="card bg-light" style={{ width: "18rem;" }}>
+									<div className="card bg-light" style={{ width: "18rem" }}>
 										<img
 											className="card-img-top"
 											src="https://via.placeholder.com/150x150"

@@ -24,9 +24,6 @@ export const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
-					<CardPeople />
-					<CardVehicles />
-					<CardPlanets />
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/demo" component={Demo} />
