@@ -3,28 +3,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			people: [],
 			planets: [],
-			vehicles: []
+			vehicles: [],
+			peopleNext: [],
+			vehiclesNext: [],
+			planetsNext: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			getData: async name => {
-				let results = [];
-				let url = "https://swapi.dev/api/" + name + "/";
-				do {
-					const res = await fetch(url);
-					const data = await res.json();
-					if (data.next != null) {
-						url = data.next.replace("http", "https");
-					} else {
-						url = data.next;
-					}
-					console.log("this is response data: ", data);
-					for (let result of data.results) {
-						results.push(result);
-					}
-				} while (url != null);
-				console.log("this is results: ", results);
-				setStore({ [name]: results });
+			getData: (name, pageNumber) => {
+				let url = "https://swapi.dev/api/" + name + "/?page=" + pageNumber;
+				let nameNext = name + "Next";
+				fetch(url)
+					.then(res => res.json())
+					.then(result => {
+						setStore({
+							[name]: result.results,
+							[nameNext]: result.next
+						});
+					})
+					.cath(e => console.error(e));
+			},
+			getItems: (name, nameNext) => {
+				const [active, setActive] = useState(false);
 			},
 			loadPeople: () => {
 				const actions = getActions();

@@ -1,8 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 
 const CardPeople = () => {
 	const { store, actions } = useContext(Context);
+	const { active, setActive } = useState(false);
+	const handleEvent = () => {
+		if (store.people.lenght === 5) {
+			setActive({ active: true });
+		}
+	};
 	return (
 		<React.Fragment>
 			<div className="container-fluid">
