@@ -7,24 +7,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			loadPeople() {
-				const url = "https://swapi.dev/api/people/";
-				fetch(url)
-					.then(res => res.json())
-					.then(result => {
-						console.log("hola people", result);
-						setStore({
-							people: result.results
-						});
-					})
-					.catch(e => console.error(e));
+			getData: async name => {
+				const results = [];
+				let url = "https://swapi.dev/api/${name}";
+				do {
+					const res = await fetch(url);
+					const data = await res.json();
+					url = data.next;
+					results.push(data.results);
+				} while (url);
+				setStore({ [name]: data.results });
+			},
+			loadPeople: () => {
+				const actions = getActions();
+				actions.getData("people");
 			},
 			loadPlanets() {
 				const url = "https://swapi.dev/api/planets/";
 				fetch(url)
 					.then(res => res.json())
 					.then(result => {
-						console.log("hola planets", result);
 						setStore({
 							planets: result.results
 						});
