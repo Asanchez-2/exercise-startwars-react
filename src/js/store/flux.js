@@ -10,21 +10,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			getData: (name, pageNumber) => {
+			getData: (name, pageNumber = 1) => {
 				let url = "https://swapi.dev/api/" + name + "/?page=" + pageNumber;
+				const currentStore = getStore();
 				let nameNext = name + "Next";
 				fetch(url)
 					.then(res => res.json())
 					.then(result => {
+						let itemList = [];
+						if (name in currentStore) {
+							itemList = currentStore[name];
+						}
+						for (let item of result.results) {
+							itemList.push(item);
+						}
 						setStore({
-							[name]: result.results,
-							[nameNext]: result.next
+							[name]: itemList,
+							[nameNext]: result.next.split("=")[1]
 						});
 					})
-					.cath(e => console.error(e));
-			},
-			getItems: (name, nameNext) => {
-				const [active, setActive] = useState(false);
+					.catch(e => console.error(e));
 			},
 			loadPeople: () => {
 				const actions = getActions();
