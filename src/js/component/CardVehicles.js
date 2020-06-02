@@ -42,7 +42,7 @@ const CardVehicles = () => {
 						console.log("clicked for nextVehicles: ", store.vehiclesNext);
 						actions.getData("vehicles", store.vehiclesNext);
 					}}>
-					{"get more!"}
+					{"Show more results!"}
 				</button>
 			</div>
 		</React.Fragment>

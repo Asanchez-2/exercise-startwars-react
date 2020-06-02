@@ -27,7 +27,11 @@ const CardPlanets = () => {
 											<a href="#" className="btn btn-primary">
 												Learn More
 											</a>
-											<i className="fab fa-gratipay float-right" />
+											<i
+												className="fab fa-gratipay float-right"
+												href="#"
+												onClick={e => actions.saveFavorites(item.name)}
+											/>
 										</div>
 									</div>
 								</div>
@@ -42,7 +46,7 @@ const CardPlanets = () => {
 						console.log("clicked for nextPlanets: ", store.planetsNext);
 						actions.getData("planets", store.planetsNext);
 					}}>
-					{"get more!"}
+					{"Show more results!"}
 				</button>
 			</div>
 		</React.Fragment>

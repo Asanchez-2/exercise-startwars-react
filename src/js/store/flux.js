@@ -6,7 +6,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			vehicles: [],
 			peopleNext: [],
 			vehiclesNext: [],
-			planetsNext: []
+			planetsNext: [],
+			favorites: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -20,9 +21,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 						let itemList = [];
 						if (name in currentStore) {
 							itemList = currentStore[name];
+							console.log(itemList);
 						}
 						for (let item of result.results) {
 							itemList.push(item);
+							console.log(item);
 						}
 						setStore({
 							[name]: itemList,
@@ -42,6 +45,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			loadVehicles() {
 				const actions = getActions();
 				actions.getData("vehicles");
+			},
+			saveFavorites(name) {
+				const store = getStore();
+				setStore({ favorites: [...store.favorites, name] });
+			},
+			deleteFav: i => {
+				const store = getStore();
+				const favorites = store.favorites.filter((item, index) => {
+					return i !== index;
+				});
+				setStore({ favorites: [...favorites] });
 			}
 		}
 	};

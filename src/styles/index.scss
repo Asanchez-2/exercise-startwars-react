@@ -9,8 +9,12 @@
 }
 
 
-.container-fluid {
+.total {
     background-image: url(https://i.pinimg.com/originals/40/c7/12/40c712e5f3833bc38dbe1213da27069e.jpg);
+}
+
+.navbar {
+       background-image: url(https://i.pinimg.com/originals/40/c7/12/40c712e5f3833bc38dbe1213da27069e.jpg); 
 }
 
 .card {
@@ -66,4 +70,12 @@
     width: 60%;
     padding: 10px;
     max-height: 400px;
+}
+
+.logoNav {
+    text-align: left;
+    margin: auto;
+    width: 20%;
+    padding: 10px;
+    max-height: 100px;
 }

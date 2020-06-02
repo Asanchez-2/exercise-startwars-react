@@ -56,7 +56,7 @@ const CardPeople = () => {
 						console.log("clicked for nextPeople: ", store.peopleNext);
 						actions.getData("people", store.peopleNext);
 					}}>
-					{"get more!"}
+					{"Show more results!"}
 				</button>
 			</div>
 		</React.Fragment>
