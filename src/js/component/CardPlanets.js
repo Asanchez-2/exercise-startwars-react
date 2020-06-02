@@ -35,6 +35,15 @@ const CardPlanets = () => {
 						</React.Fragment>
 					))}
 				</div>
+				<button
+					className="btn btn-success"
+					type="button"
+					onClick={e => {
+						console.log("clicked for nextPlanets: ", store.planetsNext);
+						actions.getData("planets", store.planetsNext);
+					}}>
+					{"get more!"}
+				</button>
 			</div>
 		</React.Fragment>
 	);

@@ -35,6 +35,15 @@ const CardVehicles = () => {
 						</React.Fragment>
 					))}
 				</div>
+				<button
+					className="btn btn-success"
+					type="button"
+					onClick={e => {
+						console.log("clicked for nextVehicles: ", store.vehiclesNext);
+						actions.getData("vehicles", store.vehiclesNext);
+					}}>
+					{"get more!"}
+				</button>
 			</div>
 		</React.Fragment>
 	);
