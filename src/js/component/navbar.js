@@ -30,7 +30,7 @@ export const Navbar = () => {
 									<li key={index} className="dropdown-item" href="#">
 										{item}{" "}
 										<button
-											onClick={() => actions.deleteFav(index)}
+											onClick={() => actions.deleteFavourite(index)}
 											className="float-right  btn btn-danger">
 											X
 										</button>

@@ -46,11 +46,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const actions = getActions();
 				actions.getData("vehicles");
 			},
-			saveFavorites(name) {
+			addToFavourite(name) {
 				const store = getStore();
 				setStore({ favorites: [...store.favorites, name] });
 			},
-			deleteFav: i => {
+			deleteFavourite: i => {
 				const store = getStore();
 				const favorites = store.favorites.filter((item, index) => {
 					return i !== index;

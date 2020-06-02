@@ -8,8 +8,8 @@ const CardPlanets = () => {
 			<div className="container-fluid">
 				<h1 className="title text-center m-3">Planets</h1>
 				<div className="row justify-content-md-center">
-					{store.planets.map(planets => (
-						<React.Fragment key={planets.name}>
+					{store.planets.map(planet => (
+						<React.Fragment key={planet.name}>
 							<div className="card-deck">
 								<div className="col-3 col-md-4 mb-4">
 									<div className="card bg-light" style={{ width: "18rem" }}>
@@ -19,7 +19,7 @@ const CardPlanets = () => {
 											alt="Card image cap"
 										/>
 										<div className="card-body">
-											<h3 className="card-title">{planets.name}</h3>
+											<h3 className="card-title">{planet.name}</h3>
 											<p className="card-text">
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
 												mattis risus non rutrum. Fusce eget tempor ante. Duis mattis.
@@ -30,7 +30,7 @@ const CardPlanets = () => {
 											<i
 												className="fab fa-gratipay float-right"
 												href="#"
-												onClick={e => actions.saveFavorites(item.name)}
+												onClick={e => actions.addToFavourite(planet.name)}
 											/>
 										</div>
 									</div>

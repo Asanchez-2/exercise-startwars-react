@@ -41,7 +41,11 @@ const CardPeople = () => {
 											<a href="#" className="btn btn-primary">
 												Learn More
 											</a>
-											<i className="fab fa-gratipay float-right" />
+											<i
+												className="fab fa-gratipay float-right"
+												href="#"
+												onClick={e => actions.addToFavourite(person.name)}
+											/>
 										</div>
 									</div>
 								</div>
