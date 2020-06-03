@@ -46,9 +46,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const actions = getActions();
 				actions.getData("vehicles");
 			},
+
 			addToFavourite(name) {
 				const store = getStore();
-				setStore({ favorites: [...store.favorites, name] });
+				if (store.favorites.includes(name)) {
+					alert("Item already exist in your list");
+				} else {
+					console.log(`Hello, you are adding ${name}`);
+					setStore({ favorites: [...store.favorites, name] });
+				}
+				console.log(store.favorites);
 			},
 			deleteFavourite: i => {
 				const store = getStore();
