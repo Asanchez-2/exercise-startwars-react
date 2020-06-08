@@ -1,14 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
+import { Link, useRouteMatch, useParams, useHistory } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 const CardPeople = () => {
 	const { store, actions } = useContext(Context);
 	const { active, setActive } = useState(false);
-	const handleEvent = () => {
-		if (store.people.lenght === 5) {
-			setActive({ active: true });
-		}
-	};
 	return (
 		<React.Fragment>
 			<div className="container-fluid">
@@ -38,9 +35,11 @@ const CardPeople = () => {
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
 												mattis risus non rutrum. Fusce eget tempor ante. Duis mattis.
 											</p>
-											<a href="#" className="btn btn-primary">
-												Learn More
-											</a>
+											<Link to={`SingleCard/${person.name}`}>
+												<a href="#" className="btn btn-primary">
+													Learn More
+												</a>
+											</Link>
 											<i
 												className="fab fa-gratipay float-right"
 												href="#"

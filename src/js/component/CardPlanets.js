@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
+import { Link, useRouteMatch, useParams, useHistory } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 const CardPlanets = () => {
 	const { store, actions } = useContext(Context);
@@ -23,10 +25,12 @@ const CardPlanets = () => {
 											<p className="card-text">
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
 												mattis risus non rutrum. Fusce eget tempor ante. Duis mattis.
-											</p>
-											<a href="#" className="btn btn-primary">
-												Learn More
-											</a>
+											</p>{" "}
+											<Link to={`SingleCard/${planet.name}`}>
+												<a href="#" className="btn btn-primary">
+													Learn More
+												</a>
+											</Link>
 											<i
 												className="fab fa-gratipay float-right"
 												href="#"
