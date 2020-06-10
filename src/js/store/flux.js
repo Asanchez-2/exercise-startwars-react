@@ -26,7 +26,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						for (let item of result.results) {
 							// console.log(`this is item.url: ${item.url}`);
 							let itemId = item.url.match(/[/][0-9]+[/]/)[0].replace(/[/]/g, "");
-							// console.log(`this is itemId: ${itemId}`);
+							console.log(`this is itemId: ${itemId}`);
 							item.id = itemId;
 							itemList.push(item);
 						}
