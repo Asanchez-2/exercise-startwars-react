@@ -7,7 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			peopleNext: [],
 			vehiclesNext: [],
 			planetsNext: [],
-			favorites: []
+			favorites: [],
+			showModal: false
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -66,7 +67,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			addToFavourite(name) {
 				const store = getStore();
 				if (store.favorites.includes(name)) {
-					alert("Item already exist in your list");
+					setStore({ showModal: true });
 				} else {
 					//console.log(`Hello, you are adding ${name}`);
 					setStore({ favorites: [...store.favorites, name] });
@@ -79,6 +80,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return i !== index;
 				});
 				setStore({ favorites: [...favorites] });
+			},
+			showModalFalse: () => {
+				const store = getStore();
+				setStore({ showModal: false });
 			}
 		}
 	};
