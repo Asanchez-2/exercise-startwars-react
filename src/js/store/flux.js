@@ -24,8 +24,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 							//console.log(itemList);
 						}
 						for (let item of result.results) {
+							// console.log(`this is item.url: ${item.url}`);
+							let itemId = item.url.match(/[/][0-9]+[/]/)[0].replace(/[/]/g, "");
+							console.log(`this is itemId: ${itemId}`);
+							item.id = itemId;
 							itemList.push(item);
-							//console.log(item);
 						}
 						setStore({
 							[name]: itemList,
@@ -40,26 +43,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch(url)
 					.then(res => res.json())
 					.then(result => {
-						let itemSingle = [];
-						if (name in currentStore) {
-							itemSingle = currentStore[name];
-							console.log(itemSingle);
-						}
-						for (let single of result.results) {
-							itemSingle.push(single);
-							console.log(single);
-						}
+						result.id = result.url.match(/[/][0-9]+[/]/)[0].replace(/[/]/g, "");
 						setStore({
-							[name]: itemSingle
+							single: result
 						});
 					})
 					.catch(e => console.error(e));
 			},
-			loadSingleCard: () => {
-				const actions = getActions();
-				actions.singleCard("people", "1");
-			},
-
 			loadPeople: () => {
 				const actions = getActions();
 				actions.getData("people");

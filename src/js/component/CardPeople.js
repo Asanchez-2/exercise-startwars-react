@@ -35,10 +35,10 @@ const CardPeople = () => {
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
 												mattis risus non rutrum. Fusce eget tempor ante. Duis mattis.
 											</p>
-											<Link to={`SingleCard/${person.name}`}>
-												<a href="#" className="btn btn-primary">
+											<Link to={`single/people/${person.id}`}>
+												<button type="button" className="btn btn-primary">
 													Learn More
-												</a>
+												</button>
 											</Link>
 											<i
 												className="fab fa-gratipay float-right"
