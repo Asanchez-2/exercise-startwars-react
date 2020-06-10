@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link, useRouteMatch, useParams, useHistory } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 
 const CardPlanets = () => {
 	const { store, actions } = useContext(Context);
+	const { active, setActive } = useState(false);
+
 	return (
 		<React.Fragment>
 			<div className="container-fluid">
