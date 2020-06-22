@@ -1,5 +1,19 @@
 .title {
     font-family: 'Days One';
+	font-size: 30px;
+    color: #FFE807;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 46.4px;
+}
+
+.title:link {
+    text-decoration: none;
+}
+
+.main-title {
+    font-family: 'Days One';
 	font-size: 50px;
     color: #FFE807;
 	font-style: normal;
@@ -43,29 +57,17 @@
     opacity: 0.50;
     -moz-opacity: .50;
     transform: scale(1.5);
-    filter:alpha (opacity=50);
+    filter:alpha (opacity=10);
  }
 
-.btn:hover {
-    opacity: 0.50;
-    -moz-opacity: .20;
-    filter:alpha (opacity=50);
-}
-
-.logo {
-    text-align: center;
-    margin: auto;
-    width: 60%;
-    padding: 10px;
-    max-height: 400px;
+.mainLogo {
+    height: 150px;
+    width: 500px;
 }
 
 .logoNav {
-    text-align: left;
-    margin: auto;
-    width: 20%;
-    padding: 10px;
-    max-height: 100px;
+    height: 80px;
+    width: 120px;
 }
 
 

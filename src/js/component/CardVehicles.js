@@ -8,7 +8,9 @@ const CardVehicles = () => {
 	return (
 		<React.Fragment>
 			<div className="container-fluid">
-				<h1 className="title text-center m-3">Vehicles</h1>
+				<h1 id="Vehicles" className="main-title text-center m-3">
+					Vehicles
+				</h1>
 				<div className="row justify-content-md-center">
 					{store.vehicles.map(vehicle => (
 						<React.Fragment key={vehicle.name}>

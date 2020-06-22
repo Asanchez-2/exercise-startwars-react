@@ -9,15 +9,9 @@ const CardPeople = () => {
 	return (
 		<React.Fragment>
 			<div className="container-fluid">
-				<div>
-					<div className="col text-center">
-						<img
-							className="img-responsive logo"
-							src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/sagaposter-v2011_titled.jpg"
-						/>
-					</div>
-				</div>
-				<h1 className="title text-center m-3">Characters</h1>
+				<h1 id="Characters" className="main-title text-center m-3">
+					Characters
+				</h1>
 				<div className="row justify-content-md-center">
 					{store.people.map(person => (
 						<React.Fragment key={person.name}>
