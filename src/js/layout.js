@@ -13,6 +13,7 @@ import { Footer } from "./component/footer";
 import CardVehicles from "./component/CardVehicles";
 import CardPlanets from "./component/CardPlanets";
 import CardPeople from "./component/CardPeople";
+import Results from "./views/results";
 
 //create your first component
 export const Layout = () => {
@@ -29,6 +30,8 @@ export const Layout = () => {
 						<Route exact path="/" component={Home} />
 						<Route path="/demo" component={Demo} />
 						<Route path="/single/:resource/:id" component={SingleCard} />
+						<Route path="/results/:name" component={Results} />
+						<Route path="results/single/:resource/:id" component={SingleCard} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
 					<Footer />

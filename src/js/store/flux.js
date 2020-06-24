@@ -7,7 +7,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			peopleNext: [],
 			vehiclesNext: [],
 			planetsNext: [],
-			favorites: []
+			favorites: [],
+			resultPeopleSearch: [],
+			resultVehiclesSearch: [],
+			resultPlanetsSearch: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -36,6 +39,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 						});
 					})
 					.catch(e => console.error(e));
+			},
+			saveResults: (savePeople, saveVehicles, savePlanets) => {
+				const store = getStore();
+				setStore({
+					resultPeopleSearch: savePeople,
+					resultVehiclesSearch: saveVehicles,
+					resultPlanetsSearch: savePlanets
+				});
 			},
 			singleCard: (name, id) => {
 				let url = "https://swapi.dev/api/" + name + "/" + id + "/";
