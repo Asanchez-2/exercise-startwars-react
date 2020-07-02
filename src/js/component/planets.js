@@ -1,31 +1,18 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
-const CardPeople = () => {
+const Planets = () => {
 	const { store, actions } = useContext(Context);
-	const { active, setActive } = useState(false);
-	const handleEvent = () => {
-		if (store.people.lenght === 5) {
-			setActive({ active: true });
-		}
-	};
 	return (
 		<React.Fragment>
 			<div className="container-fluid">
-				<div>
-					<div className="col text-center">
-						<img
-							className="img-responsive logo"
-							src="http://i2.wp.com/bitcast-a-sm.bitgravity.com/slashfilm/wp/wp-content/images/sagaposter-v2011_titled.jpg"
-						/>
-					</div>
-				</div>
-				<h1 className="title text-center m-3">Characters</h1>
+				<h1 className="title text-center m-3">Planets</h1>
 				<div className="row justify-content-md-center">
-					{store.people.map(person => (
-						<React.Fragment key={person.name}>
+					{store.planets.map(planet => (
+						<React.Fragment key={planet.name}>
 							<div className="card-deck">
-								<div className="col-3 col-md-4 col-sm-1 mb-4">
+								<div className="col-3 col-md-4 mb-4">
 									<div className="card bg-light" style={{ width: "18rem" }}>
 										<img
 											className="card-img-top"
@@ -33,18 +20,18 @@ const CardPeople = () => {
 											alt="Card image cap"
 										/>
 										<div className="card-body">
-											<h3 className="card-title">{person.name}</h3>
+											<h3 className="card-title">{planet.name}</h3>
 											<p className="card-text">
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
 												mattis risus non rutrum. Fusce eget tempor ante. Duis mattis.
 											</p>
-											<a href="#" className="btn btn-primary">
+											<Link to={"/planets/" + planet.name} className="btn btn-secondary">
 												Learn More
-											</a>
+											</Link>
 											<i
 												className="fab fa-gratipay float-right"
 												href="#"
-												onClick={e => actions.addToFavourite(person.name)}
+												onClick={e => actions.addToFavourite(planet.name)}
 											/>
 										</div>
 									</div>
@@ -57,8 +44,8 @@ const CardPeople = () => {
 					className="btn btn-success"
 					type="button"
 					onClick={e => {
-						console.log("clicked for nextPeople: ", store.peopleNext);
-						actions.getData("people", store.peopleNext);
+						console.log("clicked for nextPlanets: ", store.planetsNext);
+						actions.getData("planets", store.planetsNext);
 					}}>
 					{"Show more results!"}
 				</button>
@@ -66,4 +53,4 @@ const CardPeople = () => {
 		</React.Fragment>
 	);
 };
-export default CardPeople;
+export default Planets;

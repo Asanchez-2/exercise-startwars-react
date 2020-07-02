@@ -21,11 +21,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 						let itemList = [];
 						if (name in currentStore) {
 							itemList = currentStore[name];
-							console.log(itemList);
 						}
 						for (let item of result.results) {
 							itemList.push(item);
-							console.log(item);
 						}
 						setStore({
 							[name]: itemList,

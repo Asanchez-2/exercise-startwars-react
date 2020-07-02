@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
-const CardVehicles = () => {
+const Vehicles = () => {
 	const { store, actions } = useContext(Context);
 	return (
 		<React.Fragment>
@@ -24,9 +25,9 @@ const CardVehicles = () => {
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
 												mattis risus non rutrum. Fusce eget tempor ante. Duis mattis.
 											</p>
-											<a href="#" className="btn btn-primary">
+											<Link to={"/vehicles/" + vehicle.name} className="btn btn-secondary">
 												Learn More
-											</a>
+											</Link>
 											<i
 												className="fab fa-gratipay float-right"
 												href="#"
@@ -52,4 +53,4 @@ const CardVehicles = () => {
 		</React.Fragment>
 	);
 };
-export default CardVehicles;
+export default Vehicles;
